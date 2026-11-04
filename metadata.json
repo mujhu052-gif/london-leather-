@@ -1,0 +1,6 @@
+{
+  "name": "STRIDE LONDON — Luxury Leather Fashion",
+  "description": "Step Bold. Live Stylish. Discover handcrafted full-grain leather jackets, shoes, wallets, belts, and bespoke British accessories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
