@@ -46,46 +46,48 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-5xl bg-[#121212] border border-white/15 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_25px_80px_rgba(0,0,0,0.9)] overflow-hidden text-white my-auto max-h-[92vh] flex flex-col md:flex-row"
+        className="relative w-full max-w-5xl neu-dark-raised-lg rounded-[2rem] sm:rounded-[2.5rem] shadow-[-12px_-12px_35px_rgba(255,255,255,0.03),18px_25px_60px_rgba(0,0,0,0.95)] overflow-hidden text-white my-auto max-h-[92vh] flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 hover:bg-white hover:text-black transition-colors text-white cursor-pointer border border-white/10"
+          className="absolute top-4 right-4 z-20 p-2.5 rounded-full neu-dark-button text-white cursor-pointer"
           aria-label="Close details"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {/* Left: Product Imagery Gallery */}
-        <div className="md:w-1/2 p-4 sm:p-8 flex flex-col justify-between bg-[#0A0A0A] border-b md:border-b-0 md:border-r border-white/10">
+        {/* Left: Product Imagery Gallery in Inset Frame */}
+        <div className="md:w-1/2 p-4 sm:p-8 flex flex-col justify-between neu-dark-inset border-b md:border-b-0 md:border-r border-white/5">
           {/* Main Large Visual */}
-          <div className="relative aspect-4/3 sm:aspect-1/1 rounded-2xl overflow-hidden bg-black/40 mb-4 border border-white/10">
+          <div className="relative aspect-4/3 sm:aspect-1/1 rounded-2xl overflow-hidden neu-dark-inset p-1 mb-4">
             <img
               src={activeImage}
               alt={product.name}
-              className="w-full h-full object-cover transition-all duration-300"
+              className="w-full h-full object-cover rounded-xl transition-all duration-300"
             />
             {hasDiscount && (
-              <span className="absolute top-3 left-3 bg-white text-black text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <span className="absolute top-3 left-3 bg-white text-black text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
                 Special Allocation
               </span>
             )}
           </div>
 
-          {/* Thumbnails Row */}
+          {/* Thumbnails Row in Tactile Pills */}
           {images.length > 1 && (
             <div className="flex items-center gap-3 overflow-x-auto no-scrollbar py-1">
               {images.map((img, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveImageIndex(i)}
-                  className={`relative w-16 h-16 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
-                    activeImageIndex === i ? 'border-white scale-105' : 'border-white/10 opacity-60 hover:opacity-100'
+                  className={`relative w-16 h-16 rounded-xl overflow-hidden shrink-0 transition-all cursor-pointer p-0.5 ${
+                    activeImageIndex === i 
+                      ? 'neu-dark-inset ring-2 ring-white/50 scale-105' 
+                      : 'neu-dark-raised-sm opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt={`${product.name} thumb ${i}`} className="w-full h-full object-cover" />
+                  <img src={img} alt={`${product.name} thumb ${i}`} className="w-full h-full object-cover rounded-lg" />
                 </button>
               ))}
             </div>
@@ -96,19 +98,19 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         <div className="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto space-y-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs uppercase tracking-[0.25em] text-white font-semibold">
+              <span className="inline-flex px-3 py-1 rounded-full neu-dark-inset-sm text-xs uppercase tracking-[0.25em] text-slate-300 font-semibold">
                 {product.category}
               </span>
               <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
-                className="p-2 rounded-full hover:bg-white/5 text-neutral-400 hover:text-rose-500 transition-colors"
+                className="p-2.5 rounded-full neu-dark-button text-neutral-400 hover:text-rose-500 transition-colors"
                 aria-label="Wishlist"
               >
                 <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-rose-500 text-rose-500' : ''}`} />
               </button>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-heading">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-heading neu-text-deboss">
               {product.name}
             </h2>
 
@@ -140,10 +142,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                      className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                         selectedSize === size
-                          ? 'bg-white text-black font-bold shadow-md'
-                          : 'bg-white/5 text-neutral-300 hover:bg-white/10 border border-white/10'
+                          ? 'bg-white text-black font-bold shadow-[-2px_-2px_6px_rgba(255,255,255,0.7),2px_3px_6px_rgba(0,0,0,0.5)]'
+                          : 'neu-dark-button text-neutral-300 hover:text-white'
                       }`}
                     >
                       {size}
@@ -165,8 +167,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     <button
                       key={c.name}
                       onClick={() => setSelectedColor(c)}
-                      className={`w-7 h-7 rounded-full border-2 transition-transform cursor-pointer flex items-center justify-center ${
-                        selectedColor.name === c.name ? 'border-white scale-110' : 'border-transparent'
+                      className={`w-7 h-7 rounded-full transition-transform cursor-pointer flex items-center justify-center ${
+                        selectedColor.name === c.name 
+                          ? 'ring-2 ring-white shadow-[-2px_-2px_6px_rgba(255,255,255,0.4),2px_3px_6px_rgba(0,0,0,0.8)] scale-110' 
+                          : 'opacity-70 hover:opacity-100'
                       }`}
                       style={{ backgroundColor: c.hex }}
                       title={c.name}
@@ -180,20 +184,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </div>
             )}
 
-            {/* Quantity Stepper */}
+            {/* Quantity Stepper in Recessed Neumorphic Track */}
             <div className="flex items-center gap-4 pt-2">
               <span className="text-xs text-neutral-400">Quantity:</span>
-              <div className="flex items-center border border-white/15 rounded-lg bg-white/5">
+              <div className="flex items-center neu-dark-inset-sm rounded-lg p-0.5">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-3 py-1 text-sm text-neutral-400 hover:text-white"
+                  className="px-3 py-1 text-sm text-neutral-400 hover:text-white cursor-pointer"
                 >
                   -
                 </button>
-                <span className="px-3 py-1 text-xs font-mono font-bold">{quantity}</span>
+                <span className="px-3 py-1 text-xs font-mono font-bold text-white">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-3 py-1 text-sm text-neutral-400 hover:text-white"
+                  className="px-3 py-1 text-sm text-neutral-400 hover:text-white cursor-pointer"
                 >
                   +
                 </button>
@@ -202,7 +206,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
             {/* Craftsmanship Details */}
             {product.craftDetails.length > 0 && (
-              <div className="pt-3 border-t border-white/10 space-y-1.5">
+              <div className="pt-3 border-t border-white/5 space-y-1.5">
                 <p className="text-[11px] uppercase tracking-wider text-white font-semibold">
                   Craftsmanship & Specifications:
                 </p>
@@ -216,12 +220,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           </div>
 
           {/* Action Buttons & Guarantees */}
-          <div className="space-y-3 pt-4 border-t border-white/10">
+          <div className="space-y-3 pt-4 border-t border-white/5">
             {/* Primary Buy CTAs */}
             <div className="flex items-center gap-3">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 py-3.5 px-6 rounded-full bg-white hover:bg-white text-black font-semibold text-xs uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg"
+                className="flex-1 py-3.5 px-6 rounded-full bg-white hover:bg-neutral-200 text-black font-semibold text-xs uppercase tracking-widest shadow-[-3px_-3px_8px_rgba(255,255,255,0.9),4px_6px_14px_rgba(0,0,0,0.5)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.3)] transition-all cursor-pointer flex items-center justify-center gap-2"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>{addedToast ? 'Added to Bag!' : 'Add to Bag'}</span>
@@ -231,7 +235,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 href={whatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-lg"
+                className="py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-[-3px_-3px_8px_rgba(255,255,255,0.1),4px_6px_14px_rgba(0,0,0,0.6)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.4)]"
                 title="Direct WhatsApp Order"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
@@ -240,8 +244,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </a>
             </div>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-3 gap-2 text-center pt-2 text-[10px] text-neutral-400">
+            {/* Trust Badges in Inset Pill Container */}
+            <div className="grid grid-cols-3 gap-2 text-center pt-2 text-[10px] text-neutral-400 neu-dark-inset-sm p-3 rounded-2xl">
               <div className="flex flex-col items-center gap-1">
                 <Truck className="w-3.5 h-3.5 text-white" />
                 <span>Free Insured Courier</span>

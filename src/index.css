@@ -34,11 +34,12 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0B0B;
+  background: #0f1013;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #252830;
   border-radius: 9999px;
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.1), inset -1px -1px 2px rgba(0, 0, 0, 0.6);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #CBD5E1;
@@ -51,5 +52,115 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ========================================================
+   NEUMORPHISM (SOFT UI) DESIGN SYSTEM FOR STRIDE LONDON
+   ======================================================== */
+
+/* Dark Neumorphic Surfaces (Obsidian Leather & Titanium) */
+.neu-dark-flat {
+  background: #141518;
+}
+
+.neu-dark-raised {
+  background: #15161a;
+  box-shadow: -5px -5px 14px rgba(255, 255, 255, 0.05), 6px 6px 16px rgba(0, 0, 0, 0.75);
+}
+
+.neu-dark-raised-lg {
+  background: #131417;
+  box-shadow: -8px -8px 24px rgba(255, 255, 255, 0.04), 12px 12px 28px rgba(0, 0, 0, 0.85);
+}
+
+.neu-dark-raised-sm {
+  background: #16171b;
+  box-shadow: -3px -3px 8px rgba(255, 255, 255, 0.04), 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.neu-dark-inset {
+  background: #111214;
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.8), inset -3px -3px 7px rgba(255, 255, 255, 0.04);
+}
+
+.neu-dark-inset-sm {
+  background: #111214;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.75), inset -2px -2px 5px rgba(255, 255, 255, 0.04);
+}
+
+.neu-dark-button {
+  background: linear-gradient(145deg, #18191e, #131417);
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.8);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neu-dark-button:hover {
+  background: linear-gradient(145deg, #1b1c22, #141519);
+  box-shadow: -5px -5px 12px rgba(255, 255, 255, 0.07), 6px 6px 15px rgba(0, 0, 0, 0.85);
+}
+.neu-dark-button:active {
+  background: #121315;
+  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.9), inset -2px -2px 6px rgba(255, 255, 255, 0.04);
+}
+
+.neu-dark-button-convex {
+  background: radial-gradient(circle at 35% 35%, #22242a 0%, #15161a 100%);
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.05), 5px 5px 12px rgba(0, 0, 0, 0.8);
+}
+.neu-dark-button-convex:active {
+  background: #121316;
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.85), inset -3px -3px 7px rgba(255, 255, 255, 0.03);
+}
+
+/* Light / Off-White Neumorphic Surfaces (for Sculpted Editorial Sections) */
+.neu-light-flat {
+  background: #E8ECF2;
+}
+
+.neu-light-raised {
+  background: #E8ECF2;
+  box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.95), 6px 6px 16px rgba(166, 178, 196, 0.5);
+}
+
+.neu-light-raised-lg {
+  background: #ECEFF4;
+  box-shadow: -10px -10px 24px rgba(255, 255, 255, 0.95), 10px 10px 24px rgba(166, 178, 196, 0.45);
+}
+
+.neu-light-raised-sm {
+  background: #E8ECF2;
+  box-shadow: -3px -3px 8px rgba(255, 255, 255, 0.95), 3px 3px 8px rgba(166, 178, 196, 0.4);
+}
+
+.neu-light-inset {
+  background: #E1E6EE;
+  box-shadow: inset 4px 4px 8px rgba(166, 178, 196, 0.55), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.neu-light-inset-sm {
+  background: #E1E6EE;
+  box-shadow: inset 2px 2px 5px rgba(166, 178, 196, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+}
+
+.neu-light-button {
+  background: linear-gradient(145deg, #F0F4FA, #E2E7EE);
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.95), 4px 4px 10px rgba(166, 178, 196, 0.5);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neu-light-button:hover {
+  background: linear-gradient(145deg, #FFFFFF, #E8EDF4);
+  box-shadow: -5px -5px 12px rgba(255, 255, 255, 1), 5px 5px 12px rgba(166, 178, 196, 0.6);
+}
+.neu-light-button:active {
+  background: #DEE3EB;
+  box-shadow: inset 3px 3px 7px rgba(166, 178, 196, 0.6), inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+}
+
+/* Debossed text effect */
+.neu-text-deboss {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.08), -1px -1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.neu-light-text-deboss {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9), -1px -1px 1px rgba(166, 178, 196, 0.4);
 }
 

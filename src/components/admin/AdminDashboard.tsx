@@ -14,15 +14,16 @@ interface AdminDashboardProps {
 }
 
 const CURATED_IMAGE_PRESETS = [
-  { label: 'Sitting Model on Wall', url: '/src/assets/images/hero_model_sitting_wall_1793810739363.jpg' },
-  { label: 'Mayfair Biker Jacket', url: '/src/assets/images/product_leather_jacket_biker_1793808348824.jpg' },
-  { label: 'Editorial Model Standing', url: '/src/assets/images/hero_leather_model_1793808348992.jpg' },
-  { label: 'Cognac Double-Monk Shoes', url: '/src/assets/images/product_leather_monk_shoes_1793808349740.jpg' },
-  { label: 'Italian Chelsea Boots', url: '/src/assets/images/product_leather_chelsea_boots_1793808372633.jpg' },
-  { label: 'Whiskey Bifold Wallet', url: '/src/assets/images/product_leather_bifold_wallet_1793808351137.jpg' },
-  { label: 'Bridle Leather Belt', url: '/src/assets/images/product_leather_belt_1793808371481.jpg' },
-  { label: 'Heritage Valet Key Fob', url: '/src/assets/images/product_leather_keychain_1793808372383.jpg' },
-  { label: 'Tannery Artisan Workshop', url: '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg' },
+  { label: 'Sitting Model on Wall', url: '/src/assets/images/hero_model_sitting_wall_real_1793989059137.jpg' },
+  { label: 'Mayfair Biker Jacket', url: '/src/assets/images/leather_biker_jacket_real_1793989042539.jpg' },
+  { label: 'Cognac Double-Monk Shoes', url: '/src/assets/images/leather_monk_strap_shoes_real_1793989042490.jpg' },
+  { label: 'Italian Chelsea Boots', url: '/src/assets/images/leather_chelsea_boots_real_1793989043651.jpg' },
+  { label: 'Whiskey Bifold Wallet', url: '/src/assets/images/leather_bifold_wallet_real_1793989044375.jpg' },
+  { label: 'Bridle Leather Belt', url: '/src/assets/images/leather_bridle_belt_real_1793989044358.jpg' },
+  { label: 'Heritage Valet Key Fob', url: '/src/assets/images/leather_keychain_fob_real_1793989057553.jpg' },
+  { label: 'Cafe Racer Jacket', url: '/src/assets/images/leather_cafe_racer_real_1793989058470.jpg' },
+  { label: 'Calfskin Cardholder', url: '/src/assets/images/leather_cardholder_wallet_real_1793989059004.jpg' },
+  { label: 'Tannery Artisan Workshop', url: '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg' },
 ];
 
 export const AdminDashboard: React.FC<AdminDashboardProps> = ({
@@ -67,8 +68,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       salePrice: 29000,
       description: 'Handcrafted luxury leather outerwear made with full-grain calfskin.',
       craftDetails: ['100% Full-grain calfskin', 'Goodyear welted or lock-stitched', 'Antique brass hardware'],
-      images: ['/src/assets/images/product_leather_jacket_biker_1793808348824.jpg'],
-      primaryImage: '/src/assets/images/product_leather_jacket_biker_1793808348824.jpg',
+      images: ['/src/assets/images/leather_biker_jacket_real_1793989042539.jpg'],
+      primaryImage: '/src/assets/images/leather_biker_jacket_real_1793989042539.jpg',
       sizes: ['S', 'M', 'L', 'XL'],
       colors: [{ name: 'Midnight Black', hex: '#0B0B0B' }],
       isFeatured: true,

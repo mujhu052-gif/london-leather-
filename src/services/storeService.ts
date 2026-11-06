@@ -1,9 +1,9 @@
 import { Product, StoreSettings, CartItem, ProductColor } from '../types';
 import { INITIAL_PRODUCTS, INITIAL_SETTINGS } from '../data/initialProducts';
 
-const PRODUCTS_STORAGE_KEY = 'stride_london_products_v1';
-const SETTINGS_STORAGE_KEY = 'stride_london_settings_v1';
-const CART_STORAGE_KEY = 'stride_london_cart_v1';
+const PRODUCTS_STORAGE_KEY = 'stride_london_products_v2';
+const SETTINGS_STORAGE_KEY = 'stride_london_settings_v2';
+const CART_STORAGE_KEY = 'stride_london_cart_v2';
 
 type Listener = () => void;
 
@@ -21,7 +21,15 @@ class StoreService {
     try {
       const storedProducts = localStorage.getItem(PRODUCTS_STORAGE_KEY);
       if (storedProducts) {
-        this.products = JSON.parse(storedProducts);
+        const parsed: Product[] = JSON.parse(storedProducts);
+        // If stored products have legacy image paths, refresh them to real photos
+        const hasLegacyImages = parsed.some(p => p.primaryImage && p.primaryImage.includes('product_leather_'));
+        if (hasLegacyImages || parsed.length < INITIAL_PRODUCTS.length) {
+          this.products = [...INITIAL_PRODUCTS];
+          this.persistProducts();
+        } else {
+          this.products = parsed;
+        }
       } else {
         this.products = [...INITIAL_PRODUCTS];
         this.persistProducts();

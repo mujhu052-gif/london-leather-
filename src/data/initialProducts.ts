@@ -27,11 +27,11 @@ export const INITIAL_PRODUCTS: Product[] = [
       'Two internal concealed passport/valet pockets'
     ],
     images: [
-      '/src/assets/images/product_leather_jacket_biker_1793808348824.jpg',
-      '/src/assets/images/hero_leather_model_1793808348992.jpg',
-      '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg'
+      '/src/assets/images/leather_biker_jacket_real_1793989042539.jpg',
+      '/src/assets/images/hero_model_sitting_wall_real_1793989059137.jpg',
+      '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg'
     ],
-    primaryImage: '/src/assets/images/product_leather_jacket_biker_1793808348824.jpg',
+    primaryImage: '/src/assets/images/leather_biker_jacket_real_1793989042539.jpg',
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
       { name: 'Midnight Black', hex: '#0B0B0B' },
@@ -67,10 +67,10 @@ export const INITIAL_PRODUCTS: Product[] = [
       'Full calfskin glove lining with cushioned arch support'
     ],
     images: [
-      '/src/assets/images/product_leather_monk_shoes_1793808349740.jpg',
-      '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg'
+      '/src/assets/images/leather_monk_strap_shoes_real_1793989042490.jpg',
+      '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg'
     ],
-    primaryImage: '/src/assets/images/product_leather_monk_shoes_1793808349740.jpg',
+    primaryImage: '/src/assets/images/leather_monk_strap_shoes_real_1793989042490.jpg',
     sizes: ['40', '41', '42', '43', '44', '45'],
     colors: [
       { name: 'Cognac Patina', hex: '#9E5B32' },
@@ -105,10 +105,10 @@ export const INITIAL_PRODUCTS: Product[] = [
       'Layered compressed leather stack heel with rubber cap'
     ],
     images: [
-      '/src/assets/images/product_leather_chelsea_boots_1793808372633.jpg',
-      '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg'
+      '/src/assets/images/leather_chelsea_boots_real_1793989043651.jpg',
+      '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg'
     ],
-    primaryImage: '/src/assets/images/product_leather_chelsea_boots_1793808372633.jpg',
+    primaryImage: '/src/assets/images/leather_chelsea_boots_real_1793989043651.jpg',
     sizes: ['40', '41', '42', '43', '44', '45'],
     colors: [
       { name: 'Midnight Onyx', hex: '#0B0B0B' },
@@ -142,10 +142,10 @@ export const INITIAL_PRODUCTS: Product[] = [
       'Curved thumb slide slots for effortless card access'
     ],
     images: [
-      '/src/assets/images/product_leather_bifold_wallet_1793808351137.jpg',
-      '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg'
+      '/src/assets/images/leather_bifold_wallet_real_1793989044375.jpg',
+      '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg'
     ],
-    primaryImage: '/src/assets/images/product_leather_bifold_wallet_1793808351137.jpg',
+    primaryImage: '/src/assets/images/leather_bifold_wallet_real_1793989044375.jpg',
     sizes: ['Standard Bifold'],
     colors: [
       { name: 'Whiskey Tan', hex: '#B2672B' },
@@ -180,10 +180,10 @@ export const INITIAL_PRODUCTS: Product[] = [
       'Teardrop adjustment holes for seamless buckle prong seating'
     ],
     images: [
-      '/src/assets/images/product_leather_belt_1793808371481.jpg',
-      '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg'
+      '/src/assets/images/leather_bridle_belt_real_1793989044358.jpg',
+      '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg'
     ],
-    primaryImage: '/src/assets/images/product_leather_belt_1793808371481.jpg',
+    primaryImage: '/src/assets/images/leather_bridle_belt_real_1793989044358.jpg',
     sizes: ['30', '32', '34', '36', '38', '40', '42'],
     colors: [
       { name: 'Espresso Bridle', hex: '#321E17' },
@@ -218,10 +218,10 @@ export const INITIAL_PRODUCTS: Product[] = [
       'Hand-stamped golden S monogram emblem'
     ],
     images: [
-      '/src/assets/images/product_leather_keychain_1793808372383.jpg',
-      '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg'
+      '/src/assets/images/leather_keychain_fob_real_1793989057553.jpg',
+      '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg'
     ],
-    primaryImage: '/src/assets/images/product_leather_keychain_1793808372383.jpg',
+    primaryImage: '/src/assets/images/leather_keychain_fob_real_1793989057553.jpg',
     sizes: ['Standard Loop'],
     colors: [
       { name: 'Onyx Black', hex: '#0B0B0B' },
@@ -255,10 +255,10 @@ export const INITIAL_PRODUCTS: Product[] = [
       'Reinforced shoulder and elbow articulation quilting'
     ],
     images: [
-      '/src/assets/images/hero_leather_model_1793808348992.jpg',
-      '/src/assets/images/product_leather_jacket_biker_1793808348824.jpg'
+      '/src/assets/images/leather_cafe_racer_real_1793989058470.jpg',
+      '/src/assets/images/leather_biker_jacket_real_1793989042539.jpg'
     ],
-    primaryImage: '/src/assets/images/hero_leather_model_1793808348992.jpg',
+    primaryImage: '/src/assets/images/leather_cafe_racer_real_1793989058470.jpg',
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
       { name: 'Charcoal Black', hex: '#141414' },
@@ -288,10 +288,10 @@ export const INITIAL_PRODUCTS: Product[] = [
       'RFID protective shield insert'
     ],
     images: [
-      '/src/assets/images/product_leather_bifold_wallet_1793808351137.jpg',
-      '/src/assets/images/product_leather_keychain_1793808372383.jpg'
+      '/src/assets/images/leather_cardholder_wallet_real_1793989059004.jpg',
+      '/src/assets/images/leather_bifold_wallet_real_1793989044375.jpg'
     ],
-    primaryImage: '/src/assets/images/product_leather_bifold_wallet_1793808351137.jpg',
+    primaryImage: '/src/assets/images/leather_cardholder_wallet_real_1793989059004.jpg',
     sizes: ['Ultra Slim'],
     colors: [
       { name: 'Whiskey Calf', hex: '#9E5B32' },

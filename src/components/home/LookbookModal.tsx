@@ -22,19 +22,19 @@ export const LookbookModal: React.FC<LookbookModalProps> = ({
     {
       title: 'Chapter I: The Anatomy of Raw Calfskin',
       desc: 'Selected in Florence and Leeds. We test hide density, fiber uniformity, and elasticity before cutting.',
-      image: '/src/assets/images/craft_leather_tannery_macro_1793808351301.jpg',
+      image: '/src/assets/images/tannery_workshop_craft_real_1793989163039.jpg',
       timestamp: '00:45'
     },
     {
       title: 'Chapter II: Hand-Patterning & Biker Roll',
       desc: 'Every panel is hand-skived and hammer-peened to guarantee fluid shoulder rotation on and off the road.',
-      image: '/src/assets/images/product_leather_jacket_biker_1793808348824.jpg',
+      image: '/src/assets/images/leather_biker_jacket_real_1793989042539.jpg',
       timestamp: '01:30'
     },
     {
       title: 'Chapter III: The Goodyear & Crust Patina',
       desc: 'Channel-cut veg-tan leather soles stitched with lock-tensioned waxed linen cords for multi-decade life.',
-      image: '/src/assets/images/product_leather_monk_shoes_1793808349740.jpg',
+      image: '/src/assets/images/leather_monk_strap_shoes_real_1793989042490.jpg',
       timestamp: '02:15'
     }
   ];

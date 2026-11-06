@@ -94,7 +94,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F7F6F3] flex flex-col font-sans selection:bg-white/20 selection:text-white">
+    <div className="min-h-screen bg-[#111215] text-[#F7F6F3] flex flex-col font-sans selection:bg-white/20 selection:text-white">
       {/* Top Navigation */}
       <Navbar
         currentView={currentView}

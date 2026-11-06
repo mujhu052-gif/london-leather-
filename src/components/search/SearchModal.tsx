@@ -40,29 +40,29 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-150">
       <div
-        className="relative w-full max-w-2xl bg-[#141414] border border-white/15 rounded-3xl shadow-2xl p-6 text-white overflow-hidden"
+        className="relative w-full max-w-2xl neu-dark-raised-lg rounded-3xl shadow-[-10px_-10px_30px_rgba(255,255,255,0.03),15px_20px_50px_rgba(0,0,0,0.95)] p-6 text-white overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Search Input Bar */}
-        <div className="relative flex items-center border-b border-white/15 pb-4">
-          <Search className="w-5 h-5 text-white shrink-0" />
+        {/* Search Input Bar inside Recessed Neumorphic Well */}
+        <div className="relative flex items-center neu-dark-inset rounded-2xl px-4 py-3">
+          <Search className="w-5 h-5 text-slate-300 shrink-0" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search jackets, boots, wallets, belts..."
-            className="w-full bg-transparent px-4 text-base sm:text-lg text-white placeholder-neutral-500 focus:outline-none"
+            className="w-full bg-transparent px-3 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none"
           />
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full hover:bg-white/10 text-neutral-400 hover:text-white cursor-pointer"
+            className="p-1.5 rounded-full neu-dark-button text-neutral-400 hover:text-white cursor-pointer"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Quick Suggestion Pills */}
+        {/* Quick Suggestion Pills in Tactile Buttons */}
         {!query && (
           <div className="py-6 space-y-3">
             <p className="text-xs uppercase tracking-wider text-neutral-400">Popular Searches:</p>
@@ -71,7 +71,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                 <button
                   key={term}
                   onClick={() => setQuery(term)}
-                  className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white hover:text-black border border-white/10 text-xs text-neutral-300 transition-colors cursor-pointer"
+                  className="px-3.5 py-1.5 rounded-full neu-dark-button text-xs text-neutral-300 hover:text-white cursor-pointer"
                 >
                   {term}
                 </button>
@@ -82,7 +82,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
         {/* Results List */}
         {query && (
-          <div className="py-4 max-h-[60vh] overflow-y-auto space-y-2">
+          <div className="py-4 max-h-[60vh] overflow-y-auto space-y-2.5">
             {filtered.length === 0 ? (
               <p className="text-sm text-neutral-400 py-6 text-center">
                 No leather creations matching "{query}".
@@ -95,16 +95,18 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     onSelectProduct(product);
                     onClose();
                   }}
-                  className="p-3 rounded-2xl hover:bg-white/5 transition-all flex items-center justify-between gap-4 cursor-pointer group border border-transparent hover:border-white/10"
+                  className="p-3 rounded-2xl neu-dark-raised-sm hover:shadow-[-3px_-3px_8px_rgba(255,255,255,0.06),4px_6px_14px_rgba(0,0,0,0.8)] transition-all flex items-center justify-between gap-4 cursor-pointer group"
                 >
                   <div className="flex items-center gap-3">
-                    <img
-                      src={product.primaryImage}
-                      alt={product.name}
-                      className="w-12 h-12 rounded-xl object-cover bg-black"
-                    />
+                    <div className="w-12 h-12 rounded-xl overflow-hidden neu-dark-inset p-0.5">
+                      <img
+                        src={product.primaryImage}
+                        alt={product.name}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    </div>
                     <div>
-                      <p className="text-sm font-semibold text-white group-hover:text-white transition-colors">
+                      <p className="text-sm font-semibold text-white group-hover:text-slate-200 transition-colors">
                         {product.name}
                       </p>
                       <p className="text-xs text-neutral-400 uppercase tracking-widest">
@@ -117,7 +119,9 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     <span className="text-xs font-mono font-bold text-white">
                       PKR {(product.salePrice ?? product.price).toLocaleString()}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-white transition-colors" />
+                    <div className="p-2 rounded-full neu-dark-button text-neutral-400 group-hover:text-white transition-colors">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
                   </div>
                 </div>
               ))

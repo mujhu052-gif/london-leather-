@@ -36,8 +36,8 @@ export const ShopAllGrid: React.FC<ShopAllGridProps> = ({
 
   return (
     <section id="shop-all-products" className="relative px-2.5 sm:px-6 lg:px-8 py-6 sm:py-16 lg:py-24 max-w-[1520px] mx-auto">
-      {/* Dark Charcoal Container */}
-      <div className="relative rounded-[1.75rem] sm:rounded-[3.5rem] bg-[#111111] border border-white/10 p-4 sm:p-10 lg:p-16 shadow-2xl text-white">
+      {/* Dark Charcoal Neumorphic Raised Container */}
+      <div className="relative rounded-[1.75rem] sm:rounded-[3.5rem] neu-dark-raised-lg p-4 sm:p-10 lg:p-16 text-white">
         
         {/* Header & Filter Controls with Motion Reveal */}
         <motion.div
@@ -48,10 +48,10 @@ export const ShopAllGrid: React.FC<ShopAllGridProps> = ({
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-12"
         >
           <div>
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-slate-400 font-semibold">
+            <span className="inline-flex px-3.5 py-1 rounded-full neu-dark-inset-sm text-[10px] sm:text-xs uppercase tracking-[0.3em] text-slate-300 font-semibold mb-2">
               The Complete Archive
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mt-0.5 sm:mt-1 font-heading">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mt-0.5 sm:mt-1 font-heading neu-text-deboss">
               Shop All Products
             </h2>
             <div className="min-h-[1.5em]">
@@ -65,17 +65,17 @@ export const ShopAllGrid: React.FC<ShopAllGridProps> = ({
             </div>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex items-center gap-1 sm:gap-1.5 p-1 bg-white/5 rounded-full overflow-x-auto max-w-full">
+          {/* Filter Pills in recessed Neumorphic track */}
+          <div className="flex items-center gap-1 sm:gap-1.5 p-1.5 neu-dark-inset rounded-full overflow-x-auto max-w-full">
             {categories.map((cat) => {
               const isActive = selectedCat === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCat(cat.id)}
-                  className={`px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                  className={`px-3.5 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap ${
                     isActive
-                      ? 'bg-white text-black shadow-md'
+                      ? 'bg-white text-black shadow-[-2px_-2px_6px_rgba(255,255,255,0.7),3px_4px_10px_rgba(0,0,0,0.6)]'
                       : 'text-neutral-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -99,10 +99,10 @@ export const ShopAllGrid: React.FC<ShopAllGridProps> = ({
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.6, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 onClick={() => onOpenProduct(product)}
-                className="group relative rounded-2xl sm:rounded-3xl bg-[#161616] border border-white/10 hover:border-white/40 p-2.5 sm:p-4 transition-all duration-300 shadow-xl cursor-pointer flex flex-col justify-between"
+                className="group relative rounded-2xl sm:rounded-3xl neu-dark-raised hover:shadow-[-5px_-5px_14px_rgba(255,255,255,0.07),7px_9px_22px_rgba(0,0,0,0.85)] p-2.5 sm:p-4 transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
-                {/* Visual */}
-                <div className="relative aspect-1/1 rounded-xl sm:rounded-2xl overflow-hidden bg-black/40 mb-2.5 sm:mb-4">
+                {/* Visual inside Inset Well */}
+                <div className="relative aspect-1/1 rounded-xl sm:rounded-2xl overflow-hidden neu-dark-inset p-1 mb-2.5 sm:mb-4">
                   <img
                     src={product.primaryImage}
                     alt={product.name}
@@ -132,7 +132,7 @@ export const ShopAllGrid: React.FC<ShopAllGridProps> = ({
                         e.stopPropagation();
                         onAddToCart(product);
                       }}
-                      className="flex-1 bg-white hover:bg-neutral-200 text-black font-semibold text-[10px] sm:text-[11px] py-1.5 sm:py-2 rounded-lg sm:rounded-xl transition-colors flex items-center justify-center gap-1 shadow-md cursor-pointer"
+                      className="flex-1 bg-white hover:bg-neutral-200 text-black font-semibold text-[10px] sm:text-[11px] py-1.5 sm:py-2 rounded-lg sm:rounded-xl shadow-[-2px_-2px_6px_rgba(255,255,255,0.8),2px_3px_6px_rgba(0,0,0,0.5)] active:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.3)] transition-all flex items-center justify-center gap-1 cursor-pointer"
                     >
                       <ShoppingBag className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       <span className="hidden sm:inline">Add to Bag</span>
@@ -144,7 +144,7 @@ export const ShopAllGrid: React.FC<ShopAllGridProps> = ({
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-black/70 hover:bg-[#25D366] text-white hover:text-black transition-colors"
+                      className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl neu-dark-button text-white hover:text-[#25D366] transition-colors"
                       title="Buy now via WhatsApp"
                     >
                       <MessageCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -184,11 +184,11 @@ export const ShopAllGrid: React.FC<ShopAllGridProps> = ({
           })}
         </div>
 
-        {/* Bottom View All Link */}
-        <div className="mt-12 text-center pt-8 border-t border-white/10">
+        {/* Bottom View All Link in Neumorphic Convex Pill */}
+        <div className="mt-12 text-center pt-8 border-t border-white/5">
           <button
             onClick={() => onNavigateToShop(selectedCat === 'all' ? undefined : selectedCat)}
-            className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/10 hover:bg-white hover:text-black text-white font-semibold text-xs uppercase tracking-widest transition-all cursor-pointer"
+            className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full neu-dark-button text-white hover:text-slate-200 font-semibold text-xs uppercase tracking-widest transition-all cursor-pointer"
           >
             <span>View All in Full Catalog</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
